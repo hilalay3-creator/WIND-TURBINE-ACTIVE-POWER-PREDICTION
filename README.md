@@ -20,8 +20,19 @@ Gerekli tüm kütüphaneler verisyon sabitlemeleriyle birlikte requirements.txt 
 
 İndirmek için terminale yazın :  pip install -r requirements.txt
 
-Teknik Rapor: 
+DETAILS
 
+preprocessing.py: A dedicated module for SCADA data cleaning, feature engineering (including air density and wind vectors), and isolating the target turbine to prevent data leakage.
+
+model.py: Implements a robust Stacking Ensemble architecture combining LightGBM and CatBoost, optimized through a RidgeCV meta-learner and 5-fold cross-validation.
+
+evaluate.py: Provides comprehensive performance analysis using metrics like MAE and RMSE, including visualizations to compare predicted vs. actual power output.
+
+main.py: The central orchestration script that manages the end-to-end pipeline, from raw data ingestion to the final generation of power predictions.
+
+requirements.txt: Ensures environment reproducibility by pinning specific versions of all necessary libraries, such as Scikit-learn, LightGBM, and CatBoost.
+
+README.md: The primary documentation file detailing the project’s Digital Twin methodology, technical stack, and competitive performance results.
 Rüzgar Enerjisi Güç Tahmininde Mekansal Korelasyon ve Dijital İkiz Uygulaması
 1. Proje Özeti ve Veri Mimarisi
 Bu çalışma, İskoçya'daki Hill of Towie rüzgar santralinde bulunan 7 türbinlik bir filoda, sensör verisi eksik olan (Blind Prediction) Türbin 1 (T1)'in aktif güç üretimini tahmin etmeyi amaçlar.
