@@ -1,3 +1,77 @@
+<div align="center">
+  <h1 style="color: #1a3a5f;">🌬️ Wind Turbine Active Power Prediction</h1>
+  <p><strong>Digital Twin & Spatial Correlation for Blind Prediction Case Study</strong></p>
+  
+  <img src="https://img.shields.io/badge/Python-3.9+-blue?style=for-the-badge&logo=python" alt="Python">
+  <img src="https://img.shields.io/badge/LightGBM-Expert-orange?style=for-the-badge" alt="LightGBM">
+  <img src="https://img.shields.io/badge/CatBoost-Optimized-green?style=for-the-badge" alt="CatBoost">
+  <img src="https://img.shields.io/badge/Energy-Digital_Twin-blueviolet?style=for-the-badge" alt="Digital Twin">
+</div>
+
+---
+
+## 📝 <span style="color: #2980b9;">Project Overview</span>
+This project focuses on predicting the **Active Power** of a target wind turbine (**T1**) in a 7-turbine farm located in Scotland (Hill of Towie). The primary challenge is **Blind Prediction**: we assume T1's wind sensors are faulty and reconstruct its power output using a **Digital Twin** approach based on neighboring turbines and global climate data.
+
+*   **Dataset:** ~200,000 rows of high-resolution SCADA data. [Kaggle Competition Link](https://www.kaggle.com/competitions/hill-of-towie-wind-turbine-power-prediction/overview)
+*   **Target Accuracy:** Ranked equivalent to **12th place** with a final **MAE of 50.36**.
+
+---
+
+## 🛠️ <span style="color: #c0392b;">Technical Stack & Toolkit</span>
+
+| Tool | Purpose |
+| :--- | :--- |
+| **LightGBM** | Fast gradient boosting for high-speed training. |
+| **CatBoost** | Managing categorical features and preventing overfitting. |
+| **RidgeCV** | Meta-learning for robust model stacking/blending. |
+| **Scikit-learn** | Pipeline management and robust scaling of data. |
+| **Pandas/NumPy** | High-performance data manipulation and cleaning. |
+| **Matplotlib** | Visualizing power curves and spatial correlations. |
+
+---
+
+## 🚀 <span style="color: #27ae60;">Engineering Pipeline</span>
+
+### 1. Preprocessing & Data Integrity
+*   **Leakage Prevention:** Removed all T1-specific wind and temp sensors to ensure a true blind prediction.
+*   **Operational Filtering:** Used `is_valid` flags to remove downtime and maintenance anomalies.
+*   **Robust Scaling:** Applied `RobustScaler` to neutralize the impact of outliers in high-variance wind data.
+
+### 2. Physical Feature Engineering
+*   **Air Density ($\rho$):** Calculated using $P / (R \cdot T)$ to model mass flow through the blades.
+*   **Wind Vectors (U & V):** Converted 360° periodic wind direction into Sin/Cos components for linear model stability.
+*   **Yaw Error Estimate:** Analyzed nacelle positions vs. ERA5 wind direction to assess alignment efficiency.
+
+### 3. Model Architecture (Stacking Ensemble)
+*   **Dual-Base Learners:** Used 2000-iteration deep trees for both LGBM and CatBoost.
+*   **Log-Transform:** Applied `log1p` to Active Power to increase sensitivity in low-wind regimes.
+*   **5-Fold CV:** Ensured stability across all seasonal cycles through cross-validation.
+
+---
+
+## 📊 <span style="color: #8e44ad;">Performance Results</span>
+
+> **Final Score: 50.36 MAE**
+> 
+> In a 2315 kW turbine, this error represents a **~2.1% deviation**, proving that our Digital Twin can accurately "sense" the environment without direct wind sensors.
+
+---
+
+## ⚙️ <span style="color: #d35400;">Installation & Usage</span>
+
+Clone the repository and install dependencies:
+```bash
+git clone [https://github.com/hilalay3-creator/WIND-TURBINE-ACTIVE-POWER-PREDICTION.git](https://github.com/hilalay3-creator/WIND-TURBINE-ACTIVE-POWER-PREDICTION.git)
+cd WIND-TURBINE-ACTIVE-POWER-PREDICTION
+pip install -r requirements.txt
+
+
+
+
+
+
+
 DATASET:
 
 https://www.kaggle.com/competitions/hill-of-towie-wind-turbine-power-prediction/overview 
