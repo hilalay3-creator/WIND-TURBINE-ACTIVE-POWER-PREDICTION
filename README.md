@@ -53,4 +53,4 @@ Inverse Log & Clipping: Tahmin edilen değerler logaritmik formdan kurtarıldık
 6. Sonuç ve Metrik Analizi
 Final Skoru: 50.36 MAE (Ortalama Mutlak Hata).
 
-Mühendislik Yorumu: Bu değer, hedef türbinin rüzgar hızını (en temel girdiyi) hiç bilmeden, sadece komşu türbinlerin "ne hissettiğine" ve hava yoğunluğuna bakarak kurulan Dijital İkiz modelinin, gerçek üretimi %98'e yakın bir doğrulukla (anma gücü bazında) yakaladığını kanıtlamaktadır.
+Bu değer, hedef türbinin rüzgar hızını (en temel girdiyi) hiç bilmeden, sadece komşu türbinlerin "ne hissettiğine" ve hava yoğunluğuna bakarak kurulan Dijital İkiz modelinin, gerçek üretimi %98'e yakın bir doğrulukla (anma gücü bazında) yakaladığını kanıtlamaktadır.
