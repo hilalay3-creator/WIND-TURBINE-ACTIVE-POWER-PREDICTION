@@ -1,3 +1,17 @@
+ 🌬️ WIND-TURBINE-ACTIVE-POWER-PREDICTION
+ Digital Twin & Spatial Correlation Approach
+
+This repository contains a robust machine learning pipeline designed to predict the **Active Power** of a specific wind turbine (**T1**) in a 7-turbine wind farm located in Scotland. 
+
+🚀 The Challenge: Blind Prediction
+The core of this project addresses a real-world engineering problem: **Blind Prediction**. We simulated a scenario where all sensor data (wind speed, temperature, etc.) for the target turbine was missing. To solve this, we built a **Digital Twin** by leveraging spatial correlations from neighboring turbines and global ERA5 climate data.
+
+📊 Key Achievements:
+*   **Top Performance:** Achieved an MAE of **50.36 kW** (~2% error relative to rated power).
+*   **Ranking:** Ranked equivalent to **12th place** among 87 competitors and 414 submissions.
+*   **Robustness:** Utilized a **5-Fold Cross-Validation** strategy to ensure model stability across different seasonal wind regimes.
+
+
 DATASET:
 
 https://www.kaggle.com/competitions/hill-of-towie-wind-turbine-power-prediction/overview 
