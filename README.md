@@ -1,5 +1,6 @@
  🌬️ WIND-TURBINE-ACTIVE-POWER-PREDICTION
  Digital Twin & Spatial Correlation Approach
+main project file is main.py
 
 This repository contains a robust machine learning pipeline designed to predict the **Active Power** of a specific wind turbine (**T1**) in a 7-turbine wind farm located in Scotland. 
 
